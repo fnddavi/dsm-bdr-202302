@@ -3,6 +3,9 @@ CREATE DATABASE bd_sistema_bancario;
 \c bd_sistema_bancario; 	/* '\c' seleciona um banco específico*/
 \dt 						/*lista todas as tabelas dum BD*/
 
+CREATE SCHEMA Fernando;
+SET SERCH_PATH=Fernando;
+
 CREATE TABLE tabela01 (codigo INTEGER);
 CREATE TABLE tabela02 (codigo INTEGER, Nome VARCHAR, Idade INTEGER, Curso VARCHAR, Cidade TEXT, Peso FLOAT, DataCadastro DATE);
 CREATE TABLE tabela03 (Id INTEGER, Nome VARCHAR, Idade INTEGER);
@@ -16,12 +19,12 @@ CREATE TABLE Agencia (Nome_Agencia TEXT, Cidade_Agencia VARCHAR[50], Depositos I
 
 DROP TABLE tabela01, tabela02, tabela03, tabela04, tabela05;
 
-ALTER TABLE Cliente RENAME TO tbi_cliente;
-ALTER TABLE tbi_cliente ADD COLUMN Idade INTEGER;
-ALTER TABLE tbi_cliente ADD COLUMN CPF INTEGER[11];
-ALTER TABLE tbi_cliente RENAME COLUMN NomeCliente TO Nome_Cliente;
-ALTER TABLE tbi_cliente RENAME COLUMN Idade TO Idades;
-ALTER TABLE tbi_cliente DROP COLUMN Idades;
+ALTER TABLE Cliente RENAME TO tbl_cliente;
+ALTER TABLE tbl_cliente ADD COLUMN Idade INTEGER;
+ALTER TABLE tbl_cliente ADD COLUMN CPF INTEGER[11];
+ALTER TABLE tbl_cliente RENAME COLUMN NomeCliente TO Nome_Cliente;
+ALTER TABLE tbl_cliente RENAME COLUMN Idade TO Idades;
+ALTER TABLE tbl_cliente DROP COLUMN Idades;
 /**/
 ALTER TABLE Conta RENAME TO tbl_Conta;
 /**/
