@@ -1,6 +1,27 @@
 CREATE DATABASE bd_aula03;
 
-CREATE TABLE tbl_cliente (codigo_cliente NUMBER PRIMARY KEY, Nome TEXT NOT NULL, Cidade TEXT, Endereco TEXT);
-CREATE TABLE tbl_titulo (codigo_titulo NUMBER PRIMARY KEY, Titulo TEXT NOT NULL, Descricao VARCHAR[100], Categoria TEXT);
-CREATE TABLE tbl_emprestimo (numero_emprestimo NUMBER PRIMARY KEY, codigo_cliente NUMBER NOT NULL, codigo_livro UNIQUE NOT NULL);
-CREATE TABLE tbl_livros (cod_livro NUMBER PRIMARY KEY, codigo_titulo NUMBER, status NOT NULL);
+CREATE TABLE tbl_cliente (
+
+codigo_cliente integer PRIMARY KEY,
+nome text NOT NULL,
+cidade text,
+endereco text);
+
+CREATE TABLE tbl_titulo (
+
+codigo_titulo integer PRIMARY KEY,
+titulo text NOT NULL,
+descricao text,
+categoria text);
+
+CREATE TABLE tbl_emprestimo (
+
+numero_emprestimo integer PRIMARY KEY,
+codigo_client int,
+codigo_livro int);
+
+CREATE TABLE tbl_livros (
+
+cod_livro integer PRIMARY KEY,
+codigo_titulo int,
+status text);
